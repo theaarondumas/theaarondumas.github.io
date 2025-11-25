@@ -13,8 +13,9 @@
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Aaron Alexandre Dumas – Filipino American Action Actor" />
   <meta property="og:description" content="Filipino American action actor – villain, detective, love interest, supporting action, crime drama roles." />
-  <meta property="og:image" content="img/headshot.jpg" />
+  <meta property="og:image" content="IMG_9196.png" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theaarondumas.github.io" />
 
   <!-- SCHEMA.ORG -->
   <script type="application/ld+json">
@@ -24,10 +25,9 @@
     "name": "Aaron Alexandre Dumas",
     "jobTitle": "Actor",
     "description": "Filipino American action actor for villain, detective/agent/military, love interest, supporting action, and crime drama roles.",
-    "url": "https://yourdomain.com",
+    "url": "https://theaarondumas.github.io",
     "sameAs": [
       "https://resumes.actorsaccess.com/aarondumas",
-      "https://www.imdb.com/your-profile",
       "https://www.instagram.com/theaarondumas"
     ]
   }
@@ -35,69 +35,157 @@
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #05070a;
+      background: radial-gradient(circle at top, #1a1f2b 0, #05070a 45%, #020308 100%);
       color: #f5f5f5;
       line-height: 1.6;
     }
+
     a { color: #ff3366; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .page {
-      max-width: 960px;
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(5,7,10,0.92), rgba(10,10,16,0.92));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 32px 16px 64px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-
-    header {
-      text-align: center;
-      padding: 32px 0 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 0.08em;
+    .nav-logo {
+      font-size: 0.9rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
     }
-    header h2 {
-      margin-top: 8px;
-      font-weight: 400;
-      font-size: 1rem;
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.85rem;
+    }
+    .nav-links a {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #dddddd;
+    }
+    .nav-links a:hover {
+      color: #ff6688;
+    }
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      gap: 24px;
+      padding: 32px 0 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (min-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+        align-items: center;
+        padding-top: 40px;
+      }
+    }
+
+    .hero-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #ffcc66;
+      margin-bottom: 8px;
+    }
+    .hero-name {
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+    .hero-tagline {
+      margin-top: 10px;
+      font-size: 0.95rem;
       color: #cccccc;
+    }
+    .hero-roles {
+      margin-top: 6px;
+      font-size: 0.90rem;
+      color: #a5a5a5;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff3366, #ff7a3c);
+      border-color: rgba(255,255,255,0.25);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.65);
+    }
+    .btn-outline {
+      border-color: rgba(255,255,255,0.25);
+      color: #f5f5f5;
+      background: rgba(5,7,10,0.6);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.05);
     }
 
     .hero-headshot {
-      margin-top: 24px;
       display: flex;
       justify-content: center;
     }
     .hero-headshot img {
-      width: 220px;
-      max-width: 70%;
-      border-radius: 12px;
+      width: min(260px, 75vw);
+      border-radius: 18px;
       border: 2px solid rgba(255,255,255,0.35);
-      box-shadow: 0 14px 40px rgba(0,0,0,0.8);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.9);
       object-fit: cover;
     }
 
-    .grid {
-      display: grid;
-      gap: 24px;
-      margin-top: 32px;
-    }
-
-    @media (min-width: 800px) {
-      .grid-2 {
-        grid-template-columns: 2fr 3fr;
-      }
-      .roles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
+    /* SECTION BASICS */
     section {
-      padding: 24px 0;
+      padding: 28px 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     section:last-of-type {
@@ -112,11 +200,6 @@
       color: #ff3366;
     }
 
-    .tagline {
-      font-size: 1.05rem;
-      color: #e0e0e0;
-    }
-
     .label {
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -125,23 +208,43 @@
       margin-bottom: 4px;
     }
 
+    .tagline {
+      font-size: 1.0rem;
+      color: #e0e0e0;
+    }
+
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 8px;
+      margin-top: 10px;
     }
     .pill {
       border-radius: 999px;
       padding: 4px 10px;
       font-size: 0.78rem;
       border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(5,7,10,0.75);
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    @media (min-width: 880px) {
+      .grid-2 {
+        grid-template-columns: 2fr 3fr;
+      }
+      .roles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .role-card {
       padding: 16px 16px 18px;
       border-radius: 10px;
-      background: linear-gradient(135deg, rgba(255,51,102,0.12), rgba(0,0,0,0.7));
+      background: linear-gradient(135deg, rgba(255,51,102,0.14), rgba(0,0,0,0.85));
       border: 1px solid rgba(255,255,255,0.12);
     }
     .role-card h4 {
@@ -160,6 +263,34 @@
       font-size: 0.9rem;
     }
 
+    .tech-layout {
+      display: grid;
+      gap: 24px;
+      margin-top: 16px;
+    }
+    @media (min-width: 880px) {
+      .tech-layout {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+        align-items: center;
+      }
+    }
+
+    .tech-poster {
+      text-align: center;
+    }
+    .tech-poster img {
+      width: 100%;
+      max-width: 460px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.9);
+    }
+    .image-caption {
+      font-size: 0.8rem;
+      color: #ccc;
+      margin-top: 6px;
+    }
+
     .contact {
       font-size: 0.9rem;
     }
@@ -173,40 +304,63 @@
       margin-top: 8px;
     }
 
-    .tech-poster {
-      margin-top: 20px;
+    footer {
+      padding: 18px 16px 26px;
       text-align: center;
-    }
-    .tech-poster img {
-      width: 100%;
-      max-width: 480px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.85);
-    }
-    .image-caption {
-      font-size: 0.8rem;
-      color: #ccc;
-      margin-top: 6px;
+      font-size: 0.75rem;
+      color: #777;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
 
-<div class="page">
-  <header>
-    <h1>AARON ALEXANDRE DUMAS</h1>
-    <h2>Filipino American Action Actor · Villain · Detective · Love Interest · Crime Drama</h2>
-
-    <!-- HERO HEADSHOT -->
-    <div class="hero-headshot">
-      <img src="img/headshot.jpg"
-           alt="Aaron Alexandre Dumas Filipino American action actor headshot in suit and tie" />
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">AAD • ACTION</div>
+    <div class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#roles">Roles</a>
+      <a href="#technician">The Technician</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <!-- ABOUT + TYPE -->
-  <section>
+<div class="page" id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-kicker">Filipino American Actor • Los Angeles</div>
+      <div class="hero-name">AARON ALEXANDRE<br>DUMAS</div>
+      <p class="hero-tagline">
+        Grounded, intense, camera-ready for action.  
+      </p>
+      <p class="hero-roles">
+        Villain • Detective / Agent • Love Interest • Crime Drama
+      </p>
+
+      <div class="hero-cta-row">
+        <a class="btn btn-primary" href="https://resumes.actorsaccess.com/aarondumas" target="_blank">
+          View Actors Access
+        </a>
+        <a class="btn btn-outline" href="#contact">
+          Contact / Casting
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-headshot">
+      <img src="IMG_9196.png"
+           alt="Aaron Alexandre Dumas Filipino American action actor headshot" />
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
     <div class="grid grid-2">
       <div>
         <p class="label">About</p>
@@ -231,13 +385,13 @@
         <p><strong>Base:</strong> Los Angeles, CA</p>
         <p><strong>Ethnicity:</strong> Filipino American / Mixed Ethnic Look</p>
         <p><strong>Build:</strong> Athletic · Action-ready</p>
-        <p><strong>Recent Project:</strong> Writer/Producer/Lead – “The Technician”</p>
+        <p><strong>Recent Project:</strong> Writer / Producer / Lead – <em>The Technician</em></p>
       </div>
     </div>
   </section>
 
-  <!-- ROLES A–F -->
-  <section>
+  <!-- ROLES -->
+  <section id="roles">
     <h3>Roles I Play</h3>
     <div class="grid roles-grid">
 
@@ -309,26 +463,41 @@
     </div>
   </section>
 
-  <!-- CREDITS / TRAINING + POSTER -->
-  <section>
-    <h3>Selected Experience & Training</h3>
-    <p>
-      On-camera experience in action, drama, and thriller material, with ongoing training focused on
-      scene study, on-camera technique, and stunt/safety awareness.
-    </p>
+  <!-- THE TECHNICIAN FEATURE -->
+  <section id="technician">
+    <h3>The Technician – Featured Project</h3>
 
-    <!-- FEATURED PROJECT POSTER -->
-    <div class="tech-poster">
-      <img src="img/technician-poster.jpg"
-           alt="The Technician neon action poster featuring Aaron Alexandre Dumas" />
-      <p class="image-caption">
-        Feature project: <em>The Technician</em> – Filipino American action lead in a neon-soaked thriller.
-      </p>
+    <div class="tech-layout">
+      <div>
+        <p>
+          <em>The Technician</em> is a neon-soaked action thriller anchored by a Filipino American lead —
+          a tactical specialist pulled into a high-stakes world where skills literally save lives.
+        </p>
+        <p style="margin-top:10px;">
+          Writer, producer, and lead actor, Aaron brings a grounded physicality and emotional weight
+          to a character caught between duty, loyalty, and survival.
+        </p>
+
+        <div class="pill-row" style="margin-top:14px;">
+          <span class="pill">Neo-Noir</span>
+          <span class="pill">Urban Action</span>
+          <span class="pill">Anti-Hero Lead</span>
+          <span class="pill">Stunts & Tactical</span>
+        </div>
+      </div>
+
+      <div class="tech-poster">
+        <img src="technicianYSplaurel.png"
+             alt="The Technician action film poster featuring Aaron Alexandre Dumas" />
+        <p class="image-caption">
+          <em>The Technician</em> — Filipino American action lead.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- LINKS / CONTACT -->
-  <section>
+  <!-- CONTACT -->
+  <section id="contact">
     <h3>Links & Contact</h3>
     <div class="contact">
 
@@ -337,8 +506,6 @@
           https://resumes.actorsaccess.com/aarondumas
         </a>
       </p>
-
-      <p><strong>IMDb:</strong> <a href="#">IMDb page</a></p>
 
       <p><strong>Instagram:</strong> 
         <a href="https://www.instagram.com/theaarondumas" target="_blank">
@@ -362,6 +529,15 @@
   </section>
 
 </div>
+
+<footer>
+  © <span id="year"></span> Aaron Alexandre Dumas. All rights reserved.
+</footer>
+
+<script>
+  // Simple dynamic year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
