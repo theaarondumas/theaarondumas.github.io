@@ -200,17 +200,81 @@
       color: #ffcc66;
       margin-bottom: 8px;
     }
+
+    /* COBRA-MOVIE HERO NAME */
     .hero-name {
       font-family: 'Russo One', system-ui, -apple-system;
-      font-size: clamp(2.3rem, 4vw, 2.9rem);
-      letter-spacing: 0.24em;
+      font-size: clamp(2.8rem, 4.8vw, 3.6rem);
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       line-height: 1.25;
+
+      /* Deep red metallic gradient */
+      background: linear-gradient(
+        180deg,
+        #ff4d3d 0%,
+        #ff1a1a 25%,
+        #cc0000 55%,
+        #660000 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      /* Glow + shadow like a VHS poster */
       text-shadow:
-        0 0 10px rgba(255,51,122,0.8),
-        0 0 22px rgba(157,111,255,0.65),
-        0 0 40px rgba(0,0,0,0.9);
+        0 0 4px rgba(255, 80, 60, 0.9),
+        0 0 10px rgba(255, 30, 0, 0.9),
+        0 0 20px rgba(255, 0, 0, 0.75),
+        2px 2px 4px rgba(0, 0, 0, 0.95);
+
+      /* Subtle italic slant */
+      transform: skewX(-4deg);
+
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+
+      /* Breathing neon effect */
+      animation: cobraPulse 2.6s ease-in-out infinite alternate;
     }
+
+    /* Chrome-like highlight streak across the name */
+    .hero-name::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 38%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.7) 35%,
+        rgba(255, 255, 255, 0.95) 50%,
+        rgba(255, 255, 255, 0.7) 65%,
+        transparent 100%
+      );
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    @keyframes cobraPulse {
+      0% {
+        text-shadow:
+          0 0 3px rgba(255, 80, 60, 0.7),
+          0 0 8px rgba(255, 30, 0, 0.7),
+          0 0 14px rgba(255, 0, 0, 0.6),
+          2px 2px 4px rgba(0, 0, 0, 0.95);
+      }
+      100% {
+        text-shadow:
+          0 0 6px rgba(255, 120, 90, 1),
+          0 0 14px rgba(255, 40, 0, 1),
+          0 0 26px rgba(255, 0, 0, 0.9),
+          3px 3px 6px rgba(0, 0, 0, 1);
+      }
+    }
+
     .hero-tagline {
       margin-top: 12px;
       font-size: 0.96rem;
