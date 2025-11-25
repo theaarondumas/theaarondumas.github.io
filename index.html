@@ -36,9 +36,7 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -82,14 +80,9 @@
       letter-spacing: 0.14em;
       color: #dddddd;
     }
-    .nav-links a:hover {
-      color: #ff6688;
-    }
+    .nav-links a:hover { color: #ff6688; }
     @media (max-width: 640px) {
-      .nav-inner {
-        flex-direction: column;
-        gap: 6px;
-      }
+      .nav-inner { flex-direction: column; gap: 6px; }
     }
 
     .page {
@@ -167,9 +160,7 @@
       color: #f5f5f5;
       background: rgba(5,7,10,0.6);
     }
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.05);
-    }
+    .btn-outline:hover { background: rgba(255,255,255,0.05); }
 
     .hero-headshot {
       display: flex;
@@ -188,9 +179,7 @@
       padding: 28px 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    section:last-of-type {
-      border-bottom: none;
-    }
+    section:last-of-type { border-bottom: none; }
 
     h3 {
       font-size: 1.1rem;
@@ -233,12 +222,8 @@
       margin-top: 24px;
     }
     @media (min-width: 880px) {
-      .grid-2 {
-        grid-template-columns: 2fr 3fr;
-      }
-      .roles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .grid-2 { grid-template-columns: 2fr 3fr; }
+      .roles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     .role-card {
@@ -275,9 +260,7 @@
       }
     }
 
-    .tech-poster {
-      text-align: center;
-    }
+    .tech-poster { text-align: center; }
     .tech-poster img {
       width: 100%;
       max-width: 460px;
@@ -291,12 +274,8 @@
       margin-top: 6px;
     }
 
-    .contact {
-      font-size: 0.9rem;
-    }
-    .contact p + p {
-      margin-top: 4px;
-    }
+    .contact { font-size: 0.9rem; }
+    .contact p + p { margin-top: 4px; }
 
     .small {
       font-size: 0.8rem;
@@ -337,7 +316,7 @@
       <div class="hero-kicker">Filipino American Actor • Los Angeles</div>
       <div class="hero-name">AARON ALEXANDRE<br>DUMAS</div>
       <p class="hero-tagline">
-        Grounded, intense, camera-ready for action.  
+        Grounded, intense, camera-ready for action.
       </p>
       <p class="hero-roles">
         Villain • Detective / Agent • Love Interest • Crime Drama
@@ -487,7 +466,8 @@
       </div>
 
       <div class="tech-poster">
-        <img src="technicianYSplaurel.png"
+        <!-- cache-busting ?v=2 in case Safari held onto an old 404 -->
+        <img src="technicianYSplaurel.png?v=2"
              alt="The Technician action film poster featuring Aaron Alexandre Dumas" />
         <p class="image-caption">
           <em>The Technician</em> — Filipino American action lead.
@@ -535,7 +515,6 @@
 </footer>
 
 <script>
-  // Simple dynamic year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
